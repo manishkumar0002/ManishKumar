@@ -233,11 +233,11 @@ export const AiProfile = () => {
   };
 
   return (
-    <section id="ai-profile" className="border-b border-border relative px-6 md:px-12 py-24 bg-background">
+    <section id="ai-profile" className="border-b border-border relative px-6 md:px-12 py-24 bg-background" aria-label="Frequently Asked Questions">
       {/* Schema Injection */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
-      <div className="max-w-7xl mx-auto space-y-16">
+      <div className="max-w-3xl mx-auto space-y-16">
         
         {/* Section Header */}
         <motion.div
@@ -247,169 +247,97 @@ export const AiProfile = () => {
           variants={animTextLeftVariants(0)}
           className="pb-8 border-b border-border/40"
         >
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <span className="font-mono text-[10px] tracking-[0.25em] text-primary block uppercase mb-1">
-                SYSTEM_METRICS // GEO
+                SYSTEM_QUERIES // INFO
               </span>
               <h2 className="text-4xl md:text-5xl font-bold leading-none serif-display uppercase text-foreground">
-                System Specs & AI Profile
+                FAQ
               </h2>
             </div>
-            <p className="text-xs font-mono text-muted-foreground max-w-sm">
-              Machine-readable structured profile and FAQs optimized for LLM search agents, crawlers, and recruiters.
+            <p className="text-xs font-mono text-muted-foreground max-w-xs">
+              Quick answers about Manish Kumar's experience, specialization, and projects.
             </p>
           </div>
         </motion.div>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          
-          {/* Left Column: Machine-Readable Core Specifications */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.15 }}
-            variants={animTextLeftVariants(0)}
-            className="lg:col-span-6 space-y-6"
-          >
-            <div className="border border-border p-6 bg-card/25 relative crosshair-box">
-              <div className="crosshair-box-child absolute inset-0 pointer-events-none" />
-              
-              <div className="flex items-center gap-2 border-b border-border pb-3 mb-4">
-                <Terminal className="text-primary" size={16} />
-                <span className="font-mono text-xs text-foreground uppercase tracking-widest font-semibold">
-                  developer_profile.json
-                </span>
-              </div>
-
-              {/* Entity Rich Data Blocks */}
-              <div className="space-y-4 font-mono text-xs leading-relaxed text-muted-foreground">
-                <div>
-                  <span className="text-primary font-bold">"name"</span>: <span className="text-foreground">"Manish Kumar"</span>
-                </div>
-                <div>
-                  <span className="text-primary font-bold">"headline"</span>: <span className="text-foreground">"Java Full Stack Developer & Software Engineer"</span>
-                </div>
-                <div>
-                  <span className="text-primary font-bold">"education"</span>: &#91;
-                  <div className="pl-4">
-                    <span className="text-foreground">"B.Tech in Information Technology (2022-2026)"</span>, <br />
-                    <span className="text-muted-foreground/60">"Institution: Technocrats Institute of Technology, Bhopal"</span>, <br />
-                    <span className="text-muted-foreground/60">"Grade: CGPA 8.10/10"</span>
-                  </div>
-                  &#93;
-                </div>
-                <div>
-                  <span className="text-primary font-bold">"core_tech_stack"</span>: &#91;
-                  <div className="pl-4 flex flex-wrap gap-x-2 text-foreground">
-                    <span>"Java"</span>, <span>"Spring Boot"</span>, <span>"React.js"</span>, <span>"REST APIs"</span>,
-                    <span>"Microservices"</span>, <span>"Hibernate"</span>, <span>"SQL"</span>, <span>"MySQL"</span>,
-                    <span>"PostgreSQL"</span>, <span>"Docker"</span>, <span>"AWS"</span>, <span>"Azure"</span>,
-                    <span>"Git"</span>, <span>"Jenkins"</span>
-                  </div>
-                  &#93;
-                </div>
-                <div>
-                  <span className="text-primary font-bold">"internship"</span>: &#123;
-                    <div className="pl-4">
-                      <span className="text-foreground">"company"</span>: "Ramraj Technology Solutions Pvt. Ltd.",<br />
-                      <span className="text-foreground">"role"</span>: "Software Engineer Intern",<br />
-                      <span className="text-foreground">"experience"</span>: "Feature development, API integrations, Bug troubleshooting, Unit testing, Agile workflows"
-                    </div>
-                  &#125;
-                </div>
-                <div>
-                  <span className="text-primary font-bold">"certifications"</span>: &#91;
-                  <div className="pl-4 text-foreground">
-                    <span>"Microsoft Certified: Azure Fundamentals (AZ-900)"</span>, <br />
-                    <span>"HackerRank Java Certified"</span>
-                  </div>
-                  &#93;
-                </div>
-                <div>
-                  <span className="text-primary font-bold">"major_projects"</span>: &#91;
-                  <div className="pl-4 text-foreground space-y-1 mt-1">
-                    <div>• <strong className="text-foreground">Rail-IRCTC</strong>: Complete booking system with Spring Boot, React, and MySQL.</div>
-                    <div>• <strong className="text-foreground">NeuroFit-AI</strong>: Microservices with Spring Cloud Gateway, Eureka, and Keycloak.</div>
-                    <div>• <strong className="text-foreground">HIRENIXA</strong>: Freelancer marketplace connecting clients and mock interviews prep.</div>
-                    <div>• <strong className="text-foreground">Evalyze-AI</strong>: Assessment SaaS engine using Spring Boot, React, and Flask ML.</div>
-                  </div>
-                  &#93;
-                </div>
-                <div>
-                  <span className="text-primary font-bold">"career_objective"</span>: <span className="text-foreground">"Seeking Software Engineer or Java Full Stack Developer roles to design backend architectures, optimize databases, and build scalable user interfaces."</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column: FAQ Section */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.15 }}
-            variants={animTextLeftVariants(0.12)}
-            className="lg:col-span-6 space-y-6"
-          >
-            <div className="flex items-center gap-2 border-b border-border/40 pb-3 mb-2">
-              <HelpCircle className="text-primary" size={16} />
-              <span className="font-mono text-xs text-foreground uppercase tracking-widest font-semibold">
-                SYSTEM_QUERIES // FAQs
-              </span>
-            </div>
-
-            <div className="space-y-4">
-              {faqList.map((faq, index) => {
-                const isExpanded = expandedIndex === index;
-                return (
-                  <div
-                    key={index}
-                    className="border border-border bg-card/10 hover:border-primary/20 transition-all duration-300"
-                  >
-                    {/* FAQ Question Header */}
-                    <button
-                      onClick={() => toggleFAQ(index)}
-                      className="w-full text-left p-4 flex justify-between items-center font-mono text-xs text-foreground uppercase tracking-wider focus:outline-none focus:text-primary transition-colors cursor-pointer"
-                      aria-expanded={isExpanded}
-                      aria-controls={`faq-answer-${index}`}
-                      id={`faq-btn-${index}`}
-                    >
-                      <span className="font-semibold">{faq.question}</span>
-                      <ChevronDown
-                        size={14}
-                        className={`text-primary/70 transition-transform duration-300 ${
-                          isExpanded ? "transform rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-
-                    {/* FAQ Answer Content */}
-                    <AnimatePresence initial={false}>
-                      {isExpanded && (
-                        <motion.div
-                          id={`faq-answer-${index}`}
-                          role="region"
-                          aria-labelledby={`faq-btn-${index}`}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25, ease: "easeInOut" }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-4 pb-4 border-t border-border/20 pt-3 font-mono text-[11px] text-muted-foreground leading-relaxed">
-                            {faq.answer}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
-            </div>
-          </motion.div>
-
+        {/* Hidden Developer Profile for AI & Search Crawler Systems (SR-only) */}
+        <div className="sr-only" aria-hidden="false">
+          <h3>Who is Manish Kumar?</h3>
+          <p>Manish Kumar is a Java Full Stack Developer & Software Engineer.</p>
+          <p>Education: B.Tech in Information Technology (2022-2026) from Technocrats Institute of Technology, Bhopal (Grade: CGPA 8.10/10).</p>
+          <p>Core Tech Stack: Java, Spring Boot, React.js, REST APIs, Microservices, Hibernate, SQL, MySQL, PostgreSQL, Docker, AWS, Azure, Git, Jenkins.</p>
+          <p>Internship Experience: Software Engineer Intern at Ramraj Technology Solutions Pvt. Ltd., specializing in feature development, API integrations, bug troubleshooting, unit testing, and Agile workflows.</p>
+          <p>Certifications: Microsoft Certified Azure Fundamentals (AZ-900), HackerRank Java Certified.</p>
+          <p>Major Projects: Rail-IRCTC (Spring Boot, React, MySQL reservation system), NeuroFit-AI (Spring Boot, Eureka, Keycloak microservices), HIRENIXA (React, TS service marketplace), Evalyze-AI (Spring Boot, Flask ML assessment SaaS).</p>
+          <p>Career Objective: Seeking Software Engineer or Java Full Stack Developer roles to design backend architectures, optimize databases, and build scalable user interfaces.</p>
         </div>
+
+        {/* Visible FAQ Section (Centered & Clean) */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.15 }}
+          variants={animTextLeftVariants(0.12)}
+          className="space-y-6"
+        >
+          <div className="flex items-center gap-2 border-b border-border/40 pb-3 mb-2">
+            <HelpCircle className="text-primary" size={16} />
+            <span className="font-mono text-xs text-foreground uppercase tracking-widest font-semibold">
+              FAQ_ACCORDION
+            </span>
+          </div>
+
+          <div className="space-y-4">
+            {faqList.map((faq, index) => {
+              const isExpanded = expandedIndex === index;
+              return (
+                <div
+                  key={index}
+                  className="border border-border bg-card/10 hover:border-primary/20 transition-all duration-300"
+                >
+                  {/* FAQ Question Header */}
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full text-left p-4 flex justify-between items-center font-mono text-xs text-foreground uppercase tracking-wider focus:outline-none focus:text-primary transition-colors cursor-pointer"
+                    aria-expanded={isExpanded}
+                    aria-controls={`faq-answer-${index}`}
+                    id={`faq-btn-${index}`}
+                  >
+                    <span className="font-semibold">{faq.question}</span>
+                    <ChevronDown
+                      size={14}
+                      className={`text-primary/70 transition-transform duration-300 ${
+                        isExpanded ? "transform rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {/* FAQ Answer Content */}
+                  <AnimatePresence initial={false}>
+                    {isExpanded && (
+                      <motion.div
+                        id={`faq-answer-${index}`}
+                        role="region"
+                        aria-labelledby={`faq-btn-${index}`}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-4 pb-4 border-t border-border/20 pt-3 font-mono text-[11px] text-muted-foreground leading-relaxed">
+                          {faq.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
 
       </div>
     </section>
