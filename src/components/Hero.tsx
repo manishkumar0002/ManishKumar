@@ -39,15 +39,16 @@ export const Hero = ({ profileImageUrl, handleDownloadResume }: HeroProps) => {
                 const el = document.getElementById("projects");
                 if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
-              className="border border-primary text-primary px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/10 transition-all flex items-center gap-3 group cursor-pointer"
+              className="border border-primary text-primary px-6 py-3 font-mono text-xs tracking-widest uppercase hover:bg-primary/10 transition-all flex items-center gap-3 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary focus:bg-primary/5"
+              aria-label="Scroll down to view Manish Kumar's projects"
             >
               VIEW PROJECTS
-             
             </button>
 
             <button
               onClick={handleDownloadResume}
-              className="border border-border bg-card/40 hover:bg-secondary/40 text-foreground px-6 py-3 font-mono text-xs tracking-widest uppercase transition-all cursor-pointer"
+              className="border border-border bg-card/40 hover:bg-secondary/40 text-foreground px-6 py-3 font-mono text-xs tracking-widest uppercase transition-all cursor-pointer focus:outline-none focus:border-primary/50 focus:bg-secondary/20"
+              aria-label="Download Manish Kumar's resume in PDF format"
             >
               DOWNLOAD RESUME
             </button>
@@ -102,7 +103,11 @@ export const Hero = ({ profileImageUrl, handleDownloadResume }: HeroProps) => {
             <div className="w-full h-full overflow-hidden grayscale contrast-[1.1] hover:grayscale-0 transition-all duration-700 relative group">
               <img
                 src={profileImageUrl}
-                alt="Manish Kumar"
+                alt="Manish Kumar - Java Full Stack Developer portrait"
+                width="320"
+                height="400"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-cover object-top scale-105 group-hover:scale-100 transition-transform duration-700"
               />
               {/* Subtle technical scanner line */}

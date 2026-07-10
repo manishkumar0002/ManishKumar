@@ -31,6 +31,7 @@ const App = () => (
             <Route path="/skills" element={<RedirectToHash target="#skills" />} />
             <Route path="/projects" element={<RedirectToHash target="#projects" />} />
             <Route path="/achievements" element={<RedirectToHash target="#achievements" />} />
+            <Route path="/ai-profile" element={<RedirectToHash target="#ai-profile" />} />
             <Route path="/contact" element={<RedirectToHash target="#contact" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

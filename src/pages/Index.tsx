@@ -5,16 +5,18 @@ import { useResumeConfig } from "@/hooks/useResumeConfig";
 import { useProjects } from "@/hooks/useProjects";
 import { useSkills } from "@/hooks/useSkills";
 
-// Modular Section Components
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Achievements from "@/components/Achievements";
 import Scale from "@/components/Scale";
+import AiProfile from "@/components/AiProfile";
 import Contact from "@/components/Contact";
+import { useSeo } from "@/hooks/useSeo";
 
 const Index = () => {
+  useSeo(); // Initialize dynamic titles and meta descriptions based on viewport scroll
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [resumeUrl, setResumeUrl] = useState<string | null>(null);
   const [resumeFilename, setResumeFilename] = useState<string>("Resume.pdf");
@@ -394,6 +396,8 @@ const Index = () => {
         <Achievements achievements={achievements} />
 
         <Scale />
+
+        <AiProfile />
 
         <Contact setIsContactOpen={setIsContactOpen} />
 

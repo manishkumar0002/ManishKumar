@@ -26,7 +26,7 @@ interface AboutProps {
 
 export const About = ({ highlights, education, handleDownloadResume }: AboutProps) => {
   return (
-    <section id="about" className="border-b border-border relative px-6 md:px-12 py-24 bg-card/20 backdrop-blur-sm">
+    <section id="about" className="border-b border-border relative px-6 md:px-12 py-24 bg-card/20 backdrop-blur-sm" aria-label="About Manish Kumar">
       <div className="max-w-7xl mx-auto space-y-16">
         
         <motion.div

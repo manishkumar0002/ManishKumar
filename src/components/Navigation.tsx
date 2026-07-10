@@ -72,7 +72,8 @@ export const Navigation = () => {
             <button
               key={item.name}
               onClick={() => handleScrollToSection(item.targetId)}
-              className="font-mono text-xs tracking-widest text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer relative py-1"
+              className="font-mono text-xs tracking-widest text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer relative py-1 focus:outline-none focus:text-primary"
+              aria-label={`Scroll to ${item.name}`}
             >
               {item.name}
             </button>
@@ -81,7 +82,7 @@ export const Navigation = () => {
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-1.5 text-muted-foreground hover:text-primary transition-colors cursor-pointer border border-border bg-card/20 rounded-full"
+            className="p-1.5 text-muted-foreground hover:text-primary transition-colors cursor-pointer border border-border bg-card/20 rounded-full focus:outline-none focus:border-primary/50"
             aria-label="Toggle Theme"
           >
             {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
@@ -93,15 +94,16 @@ export const Navigation = () => {
           {/* Theme Toggle Button for Mobile */}
           <button
             onClick={toggleTheme}
-            className="p-1.5 text-muted-foreground hover:text-primary transition-colors cursor-pointer border border-border bg-card/20 rounded-full"
+            className="p-1.5 text-muted-foreground hover:text-primary transition-colors cursor-pointer border border-border bg-card/20 rounded-full focus:outline-none focus:border-primary/50"
             aria-label="Toggle Theme"
           >
             {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-1 text-foreground cursor-pointer"
-            aria-label="Toggle menu"
+            className="p-1 text-foreground cursor-pointer focus:outline-none focus:text-primary"
+            aria-label="Toggle Navigation Menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -121,7 +123,8 @@ export const Navigation = () => {
               <button
                 key={item.name}
                 onClick={() => handleScrollToSection(item.targetId)}
-                className="font-mono text-sm tracking-widest text-muted-foreground hover:text-primary text-left py-2 border-b border-border/40 w-full cursor-pointer flex items-center justify-between"
+                className="font-mono text-sm tracking-widest text-muted-foreground hover:text-primary text-left py-2 border-b border-border/40 w-full cursor-pointer flex items-center justify-between focus:outline-none focus:text-primary"
+                aria-label={`Scroll to ${item.name}`}
               >
                 {item.name}
                 <ArrowUpRight size={14} className="text-primary/60" />

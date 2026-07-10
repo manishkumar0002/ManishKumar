@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
@@ -19,6 +19,16 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
 
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -137,10 +147,11 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
               <div>
-                <label className="block text-[10px] font-mono text-muted-foreground uppercase mb-1">
+                <label htmlFor="contact-name" className="block text-[10px] font-mono text-muted-foreground uppercase mb-1">
                   Ident / Name
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -153,10 +164,11 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
               </div>
 
               <div>
-                <label className="block text-[10px] font-mono text-muted-foreground uppercase mb-1">
+                <label htmlFor="contact-email" className="block text-[10px] font-mono text-muted-foreground uppercase mb-1">
                   Routing / Email
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -169,10 +181,11 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
               </div>
 
               <div>
-                <label className="block text-[10px] font-mono text-muted-foreground uppercase mb-1">
+                <label htmlFor="contact-subject" className="block text-[10px] font-mono text-muted-foreground uppercase mb-1">
                   Header / Subject
                 </label>
                 <input
+                  id="contact-subject"
                   type="text"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -185,10 +198,11 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
               </div>
 
               <div>
-                <label className="block text-[10px] font-mono text-muted-foreground uppercase mb-1">
+                <label htmlFor="contact-message" className="block text-[10px] font-mono text-muted-foreground uppercase mb-1">
                   Payload / Message
                 </label>
                 <textarea
+                  id="contact-message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Write your message payload here..."

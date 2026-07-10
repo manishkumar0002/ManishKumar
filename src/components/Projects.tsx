@@ -107,7 +107,11 @@ const ProjectRow = ({
             variants={imageVariants}
             whileHover={{ scale: 1.03 }}
             src={project.image_url}
-            alt={project.title}
+            alt={`Screenshot or system preview of ${project.title} - ${project.category}`}
+            width="540"
+            height="338"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-center transition-transform duration-500 cursor-pointer"
           />
           {/* Moving Gradient Overlay */}
@@ -182,7 +186,8 @@ const ProjectRow = ({
               href={project.github_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative overflow-hidden group/btn border border-border text-foreground hover:text-primary hover:shadow-[0_0_20px_rgba(0,245,255,0.35)] hover:border-primary/50 px-5 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center gap-3 cursor-pointer z-10"
+              className="relative overflow-hidden group/btn border border-border text-foreground hover:text-primary hover:shadow-[0_0_20px_rgba(0,245,255,0.35)] hover:border-primary/50 px-5 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center gap-3 cursor-pointer z-10 focus:outline-none focus:border-primary/50"
+              aria-label={`View GitHub repository source code for ${project.title}`}
             >
               <span className="absolute inset-0 bg-primary/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 z-0" />
               <span className="relative z-10 flex items-center gap-2">
@@ -193,7 +198,8 @@ const ProjectRow = ({
           ) : (
             <button
               onClick={onContactClick}
-              className="relative overflow-hidden group/btn border border-border text-foreground hover:text-primary hover:shadow-[0_0_20px_rgba(0,245,255,0.35)] hover:border-primary/50 px-5 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center gap-3 cursor-pointer z-10"
+              className="relative overflow-hidden group/btn border border-border text-foreground hover:text-primary hover:shadow-[0_0_20px_rgba(0,245,255,0.35)] hover:border-primary/50 px-5 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center gap-3 cursor-pointer z-10 focus:outline-none focus:border-primary/50"
+              aria-label={`Request GitHub repository source code access for private project ${project.title}`}
             >
               <span className="absolute inset-0 bg-primary/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 z-0" />
               <span className="relative z-10 flex items-center gap-2">
@@ -208,7 +214,8 @@ const ProjectRow = ({
               href={project.live_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative overflow-hidden group/btn border border-border text-foreground hover:text-primary hover:shadow-[0_0_20px_rgba(0,245,255,0.35)] hover:border-primary/50 px-5 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center gap-3 cursor-pointer z-10"
+              className="relative overflow-hidden group/btn border border-border text-foreground hover:text-primary hover:shadow-[0_0_20px_rgba(0,245,255,0.35)] hover:border-primary/50 px-5 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center gap-3 cursor-pointer z-10 focus:outline-none focus:border-primary/50"
+              aria-label={`View live interactive demo for ${project.title}`}
             >
               <span className="absolute inset-0 bg-primary/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 z-0" />
               <span className="relative z-10 flex items-center gap-2">
@@ -219,7 +226,8 @@ const ProjectRow = ({
           ) : (
             <button
               onClick={onContactClick}
-              className="relative overflow-hidden group/btn border border-border text-foreground hover:text-primary hover:shadow-[0_0_20px_rgba(0,245,255,0.35)] hover:border-primary/50 px-5 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center gap-3 cursor-pointer z-10"
+              className="relative overflow-hidden group/btn border border-border text-foreground hover:text-primary hover:shadow-[0_0_20px_rgba(0,245,255,0.35)] hover:border-primary/50 px-5 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 flex items-center gap-3 cursor-pointer z-10 focus:outline-none focus:border-primary/50"
+              aria-label={`Request a live environment demonstration for ${project.title}`}
             >
               <span className="absolute inset-0 bg-primary/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 z-0" />
               <span className="relative z-10 flex items-center gap-2">
