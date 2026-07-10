@@ -233,11 +233,11 @@ export const AiProfile = () => {
   };
 
   return (
-    <section id="ai-profile" className="border-b border-border relative px-6 md:px-12 py-24 bg-background" aria-label="Frequently Asked Questions">
+    <section id="ai-profile" className="sr-only" aria-label="Frequently Asked Questions" aria-hidden="false">
       {/* Schema Injection */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
-      <div className="max-w-3xl mx-auto space-y-16">
+      <div className="space-y-16">
         
         {/* Section Header */}
         <motion.div
